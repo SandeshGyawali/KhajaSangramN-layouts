@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignupActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginTop="18dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/fname_signup"
+        android:hint="Enter first name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="6dp"
+        android:id="@+id/lname_signup"
+        android:hint="Enter last name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="6dp"
+        android:id="@+id/email_signup"
+        android:hint="Enter email address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/password_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:hint="Enter password" />
+    <EditText
+        android:layout_marginTop="6dp"
+        android:id="@+id/cnfmpassword_signup"
+        android:hint="Confirm password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_location_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_border"
+            android:drawableEnd="@drawable/ic_location_on_red_24dp"
+            android:drawableRight="@drawable/ic_location_on_red_24dp"
+            android:hint="Your location here"
+            android:padding="30dp"
+            android:onClick="onLocationClick"
+
+            />
+        <Button
+            android:layout_marginTop="6dp"
+            android:id="@+id/signup_btn"
+            android:text="Signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    </ScrollView>
+    <ProgressBar
+        android:id="@+id/pb_processing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTint="#F00"
+        android:indeterminateTintMode="src_in"
+        android:visibility="gone"
+        style="@style/Widget.AppCompat.ProgressBar"
+        />
+</LinearLayout>

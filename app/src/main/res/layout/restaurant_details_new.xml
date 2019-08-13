@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".RestaurantDetails">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/background"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark"/>
+    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".resdetails">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:background="@drawable/firewatch" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/res_image"
+            android:layout_marginTop="70dp"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="@color/white"
+            android:src="@drawable/img_compare"
+            />
+
+        <TextView
+            android:id="@+id/res_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_below="@+id/res_image"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="Name of resaurant"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/res_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/res_image"
+            android:layout_marginTop="55dp"
+            android:gravity="center"
+            android:text="Address of restaurant"
+            android:textSize="12sp"
+            android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutOptions"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/white_rounded_border"
+            android:layout_below="@id/res_name"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:elevation="30dp"
+            >
+            <LinearLayout
+                android:id="@+id/menu"
+                android:layout_gravity="center_vertical"
+                android:layout_width="50dp"
+                android:layout_marginLeft="45dp"
+                android:layout_height="50dp"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/menu"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/res_location"
+                android:layout_gravity="center_vertical"
+                android:layout_width="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_height="50dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/location"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/res_contact"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="50dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/phone"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/avg_rating"
+            android:progressTint="@color/yellow"
+            android:progressBackgroundTint="@color/black"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayoutOptions"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+        <LinearLayout
+            android:id="@+id/LinearLayoutdescription"
+            android:layout_below="@id/avg_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/res_description"
+                android:textSize="16sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayoutProvideUserRatings"
+            android:padding="8dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/LinearLayoutdescription"
+            android:background="@drawable/white_rounded_border"
+            android:elevation="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            >
+
+            <TextView
+                android:textStyle="bold"
+                android:text="Rate this restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                />
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/rating"
+                android:layout_width="235dp"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/black"
+                android:progressTint="@color/yellow"
+                android:stepSize="1"
+                android:scaleX="0.5"
+                android:scaleY="0.5"/>
+            <Button
+                android:id="@+id/rating_submit_btn"
+                android:textAllCaps="false"
+                android:text="Submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/firewatch"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_user_reviews"
+            android:layout_below="@+id/linearLayoutProvideUserRatings"
+            android:textStyle="bold"
+            android:text="User Reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textSize="18dp"
+            android:layout_marginLeft="30dp"/>
+
+        <TextView
+            android:paddingTop="8dp"
+            android:text="Be the first one to rate it!!!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@+id/text_user_reviews"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/reviewrecycler"
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </RelativeLayout>
+</ScrollView>
+
+</FrameLayout>
